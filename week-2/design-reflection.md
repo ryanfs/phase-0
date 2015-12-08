@@ -1,4 +1,4 @@
-![Ryan's Wireframe](/imgs/wireframe.png)
+![Ryan's Wireframe](/week-2/imgs/wireframe.png)
 
 1. What are the 6 Phases of Web Design?
   1. Information Gathering
