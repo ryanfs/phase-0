@@ -1,3 +1,53 @@
-html {
+body {
+  background-color: #fff;
+}
 
+header {
+   text-align: center;
+   border-bottom: 1px solid #000080;
+}
+
+h1 {
+  color: #000080;
+  font-variant: small-caps;
+  margin: 0 0;
+}
+h2 {
+   color: #000080;
+}
+h3 {
+   color: #000080;
+}
+p {
+  color: #000080;
+}
+
+a {
+ color: #000080;
+}
+
+a:visited {
+  color: #ff0000;
+}
+ul {
+  display: inline-block;
+  border: 0px solid green;
+  width: 450px;
+}
+
+.description {
+  font-size: .5em;
+  margin: .2em 0 1em 0;
+
+}
+
+.geico-border {
+  border-bottom: 1px solid #000080;
+  border-top: 1px solid #000080;
+  padding: 15px 0;
+}
+
+.bottom-border {
+  border-bottom: 1px solid #000080;
+  padding: 15px 0;
 }
