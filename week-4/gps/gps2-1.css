@@ -1,3 +1,36 @@
-body {
-	
+header {
+  padding: 25px 50px;
+  width: 100%;
+  font-family: helvetica;
+  background-color: aqua;
+}
+
+
+header p {
+  background-color: grey;
+}
+
+section.column-1 {
+  display: table-cell;
+  width: 40%;
+  border: 0px solid red;
+  height: 100%;
+  padding: 10px 15px;
+}
+
+section.column-2 {
+  display: table-cell;
+  width: 40%;
+  border: 0px solid green;
+  padding: 10px 15px;
+}
+
+article {
+  font-family: helvetica;
+}
+
+footer {
+  width: 100%;
+  font-size: .8em;
+  
 }
