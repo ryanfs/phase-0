@@ -50,3 +50,16 @@ print_list(list)
 # input:
 # steps:
 # output:
+
+# What did you learn about pseudocode from working on this challenge?
+## I learned to think through my problem and lay the solution out step by step.
+# What are the tradeoffs of using Arrays and Hashes for this challenge?
+## Arrays don't let you capture a value, so we had to use a hash.
+# What does a method return?
+## A method returns an object that is what comes from how you manipulated it.
+# What kind of things can you pass into methods as arguments?
+## You can pass any type of object - string, int, array, hash, etc
+# How can you pass information between methods?
+## You return the object from a method, and then pass the first method as an argument into the second.
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+## Manipulating the value of a hash is still confusing for me.
