@@ -39,7 +39,7 @@ def mode(arr)
       end
     max = hash.values.max
     new_hash = Hash[hash.select { |k, v| v == max}]
-    return new_hash.values
+    return new_hash.keys
 end
 
 # 3. Refactored Solution
