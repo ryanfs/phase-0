@@ -9,7 +9,7 @@
 # 0. total Pseudocode
 # make sure all pseudocode is commented out!
 
-# Input:
+# Input: an array
 # Output:
 # Steps to solve the problem.
 # def total(array)
@@ -38,13 +38,21 @@ end
 
 # 4. sentence_maker pseudocode
 # make sure all pseudocode is commented out!
-# Input:
-# Output:
+# Input: array
+# Output: string
 # Steps to solve the problem.
+# take in array
+# do array.join with a space argument
+# Capitalize the first letter
+# Put a period at the end
+# return it
 
+def sentence_maker(arr)
+  sentence = arr.join(' ')+'.'
+  return sentence.capitalize!
+end
 
-
-
+p sentence_maker(["all", "my", "socks", "are", "dirty"])
 # 5. sentence_maker initial solution
 
 
@@ -53,6 +61,6 @@ end
 
 
 #tests
-puts total([1,2,3])      # => 6
-puts total([4.5, 0, -1]) # => 3.5
-puts total([-100, 100])  # => 0
+# puts total([1,2,3])      # => 6
+# puts total([4.5, 0, -1]) # => 3.5
+# puts total([-100, 100])  # => 0
