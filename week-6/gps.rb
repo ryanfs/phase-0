@@ -18,7 +18,7 @@ def serving_size_calc(item_to_make, your_ingredients)
 
   library.each do |food|
     if library[food] != library[item_to_make]
-      error_counter += -1
+      error_counter -= 1
     end
   end
 
@@ -29,6 +29,9 @@ def serving_size_calc(item_to_make, your_ingredients)
   serving_size = library.values_at(item_to_make)[0]
   remaining_ingredients = your_ingredients % serving_size
 
+  if your_ingredients < serving_size
+    p "You don't have enough ingredients to make #{item_to_make}, how about #{your_ingredients} cookies?"
+  end
 
   plates = your_ingredients / serving_size
   if plates > 1
@@ -37,22 +40,22 @@ def serving_size_calc(item_to_make, your_ingredients)
 
 
   if remaining_ingredients == 0
-    p "Make #{plates} #{item_to_make}"
+    "Make #{plates} #{item_to_make}"
   elsif remaining_ingredients == 1
-    p "Make #{plates} #{item_to_make} and 1 cookie"
+    "Make #{plates} #{item_to_make} and 1 cookie"
   elsif remaining_ingredients > 1
-    p "Make #{plates} #{item_to_make} and #{remaining_ingredients} cookies"
+    "Make #{plates} #{item_to_make} and #{remaining_ingredients} cookies"
   elsif remaining_ingredients % 5 == 0
-    p "Make #{plates} #{item_to_make} and #{remaining_ingredients / 5} cakes"
+    "Make #{plates} #{item_to_make} and #{remaining_ingredients / 5} cakes"
   elsif remaining_ingredients % 7 == 0
-    p "Make #{plates} #{item_to_make} and #{remaining_ingredients / 7} pie"
+    "Make #{plates} #{item_to_make} and #{remaining_ingredients / 7} pie"
   end
 end
 
-serving_size_calc('pie', 15)
-serving_size_calc('pie', 19)
-serving_size_calc("pie", 8)
-serving_size_calc("cake", 5)
+p serving_size_calc('pie', 15)
+p serving_size_calc('pie', 4)
+p serving_size_calc("pie", 8)
+p serving_size_calc("cake", 5)
 # p serving_size_calc("cake", 7)
 # p serving_size_calc("cookie", 1)
 # p serving_size_calc("cookie", 10)
