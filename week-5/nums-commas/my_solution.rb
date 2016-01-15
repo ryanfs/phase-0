@@ -25,48 +25,44 @@
 
 # 1. Initial Solution
 
-def separate_comma(number)
-  number = number.to_s
-  if number.length <= 3
-    return number
-  else
-  i = -1
-  counter = 0
-  while i.abs < number.length - counter
-      if i % 3 == 0
-        number = number.insert( i - 1 - counter, ',')
-        counter += 1
-      else
-      end
-  i -= 1
-  end
-  return number
-  end
-end
+# def separate_comma(number)
+#   number = number.to_s
+#   if number.length <= 3
+#     return number
+#   else
+#   i = -1
+#   counter = 0
+#   while i.abs < number.length - counter
+#       if i % 3 == 0
+#         number = number.insert( i - 1 - counter, ',')
+#         counter += 1
+#       else
+#       end
+#   i -= 1
+#   end
+#   return number
+#   end
+# end
 
 #2. Refactored Solution
 def separate_comma(number)
   number = number.to_s
-  if number.length <= 3
-    return number
-  else
-  i = -1
-  counter = 0
-  length_of_number = (number.length - counter)
-
-  while i.abs < length_of_number
-      comma_location = (i - 1 - counter)
-      if i % 3 == 0
-        number = number.insert(comma_location, ',')
-        counter += 1
-      else
-      end
-  i -= 1
+  number = number.split('').reverse!
+  array_of_ints = number.each_slice(3).to_a
+  array_of_ints.each do |num|
+    if num.length == 3
+      num.push(',')
+    end
   end
-  return number
+  answer = array_of_ints.flatten!.reverse!.join()
+  if answer[0] == ','
+    answer[0] = ''
+    return answer
   end
+  return answer
 end
 
+p separate_comma(100000000)
 
 
 # 3. Reflection
