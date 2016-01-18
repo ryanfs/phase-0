@@ -39,54 +39,54 @@
 
 
 
-class CreditCard
+# class CreditCard
 
-  def initialize(num)
-    # throws ArgumentError if num != 16 digits
-    @origin = num.to_s
-    raise(ArgumentError, "Wrong number of digits") unless @origin.length == 16
-  end
+#   def initialize(num)
+#     # throws ArgumentError if num != 16 digits
+#     @origin = num.to_s
+#     raise(ArgumentError, "Wrong number of digits") unless @origin.length == 16
+#   end
 
-  def step1
-    @int_array = []
-    @origin.chars.each { |elem| @int_array << elem.to_i }
-    @double_ints = []
+#   def step1
+#     @int_array = []
+#     @origin.chars.each { |elem| @int_array << elem.to_i }
+#     @double_ints = []
 
-    i = @int_array.length - 1
-    while i >= 0
-      if i % 2 == 0
-        @double_ints.unshift(@int_array[i] * 2)
-      else
-        @double_ints.unshift(@int_array[i])
-      end
-      i -= 1
-    end
+#     i = @int_array.length - 1
+#     while i >= 0
+#       if i % 2 == 0
+#         @double_ints.unshift(@int_array[i] * 2)
+#       else
+#         @double_ints.unshift(@int_array[i])
+#       end
+#       i -= 1
+#     end
 
-    @double_ints
-  end
+#     @double_ints
+#   end
 
-  def step2
-    @add_these_ints = []
-    @double_ints.each do |elem|
-      if elem.to_s.length != 1
-        elem.to_s.split("").each { |int| @add_these_ints << int.to_i }
-      else
-        @add_these_ints << elem
-      end
+#   def step2
+#     @add_these_ints = []
+#     @double_ints.each do |elem|
+#       if elem.to_s.length != 1
+#         elem.to_s.split("").each { |int| @add_these_ints << int.to_i }
+#       else
+#         @add_these_ints << elem
+#       end
 
-    end
-    #p @add_these_ints.inject{|sum,x| sum + x }
-    @sum = @add_these_ints.inject(:+)
-  end
+#     end
+#     #p @add_these_ints.inject{|sum,x| sum + x }
+#     @sum = @add_these_ints.inject(:+)
+#   end
 
-  def check_card
-    # returns true/false
-    # step1
-    step1
-    step2
-    @sum % 10 == 0
-  end
-end
+#   def check_card
+#     # returns true/false
+#     # step1
+#     step1
+#     step2
+#     @sum % 10 == 0
+#   end
+# end
 
 
 
@@ -97,49 +97,28 @@ end
 class CreditCard
 
   def initialize(num)
-    @origin = num.to_s
+    @origin = num.to_s.split("")
     raise(ArgumentError, "Wrong number of digits") unless @origin.length == 16
   end
 
-  def step1
-    @int_array = []
-    @origin.chars.each { |elem| @int_array << elem.to_i }
-    @double_ints = []
-
-    i = @int_array.length - 1
-    while i >= 0
-      if i.even?
-        @double_ints.unshift(@int_array[i] * 2)
-      else
-        @double_ints.unshift(@int_array[i])
-      end
-      i -= 1
-    end
-
-    @double_ints
-  end
-
-  def step2
-    @add_these_ints = []
-    @double_ints.each do |elem|
-      if elem.to_s.length != 1
-        elem.to_s.split("").each { |int| @add_these_ints << int.to_i }
-      else
-        @add_these_ints << elem
-      end
-
-    end
-    @add_these_ints.inject(:+)
+  def sum
+    @evens = @origin.select.each_with_index { |item, i| i.even? }
+    @odds = @origin.select.each_with_index { |item, i| i.odd? }
+    @double_evens = @evens.map { |i| i.to_i * 2 }
+    @odds.map! { |i| i.to_i }
+    @sum = @double_evens.join + @odds.join
+    @total_array = @sum.split("")
+    @total_array.map! { |i| i.to_i }
+    @sum = @total_array.inject { |sum,i| sum + i }
   end
 
   def check_card
-    step1
-    step2 % 10 == 0
+    sum % 10 == 0
   end
 end
 
 
-p card = CreditCard.new(0563960122001999)
-p card.step1
-p card.step2
+card = CreditCard.new(4563960122001999)
+# p card.step1
+# p card.step2
 p card.check_card
