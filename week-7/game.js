@@ -19,16 +19,23 @@
 
 
 
-// Initial HTML Code
-<div id = "stocks">
-    <h3>Stock Prices Today</h3>
+// HTML Code
+<div id="stocks">
+  <h3>Stock Prices Today</h3>
+  <p>Apple: $20</p>
+  <p>Google: $15</p>
+  <p>Facebook: $12</p>
+  <p>Amazon: $22</p>
+  <p>Tesla: $18</p>
+  <p>GE: $5</p>
 </div>
-<div id = "bank">
-    <h3>Bank Account</h3>
+<div id="bank">
+  <h3>Bank Account</h3>
 </div>
-<div id = "portfolio">
-    <h3>My Portfolio</h3>
+<div id="portfolio">
+  <h3>My Portfolio</h3>
 </div>
+
 
 // Run Code Here
 // https://jsfiddle.net/ryanfs/juu5kb0x/
@@ -126,7 +133,7 @@ function makeTrade() {
         return stockObject;
     }
     else {
-    alert("You don't have that kind of money.");
+    alert("You don't have the money to make that trade!");
     }
 }
     //else if (choice === 'sell' || 'Sell')
@@ -141,7 +148,7 @@ function addToPortfolio(stock) {
 
 
 function updateBank(stock){
-start();
+//start();
 price = stock.quantity * stockMarket[stock.name].price
 moneyBeforeTrade = bankAccount.cash
 moneyAfterTrade = moneyBeforeTrade - price
@@ -152,7 +159,7 @@ bank.append('Now you have $' + bankAccount.cash +' left in cash.' + '<br /><br /
 
 
 while ( bankAccount.cash > 0){
-start();
+//start();
 stock = makeTrade();
 bank = updateBank(stock);
 portfolio = addToPortfolio(stock);
