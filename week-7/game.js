@@ -2,6 +2,34 @@
 
 // This is a solo challenge
 
+
+//// NOTES FOR REVIEWER
+
+// Run Code Here
+// https://jsfiddle.net/ryanfs/juu5kb0x/
+
+
+/// I had a great time coming up with this game and working through the logic. It was inspired by the TI 83 game Drug Wars. I decided to make it a little more SFW and switch it to Tech Stocks though... :)
+
+ /// Right now you can purchase stocks, and when you do, it pulls money from your bank account to make the trade and will update your portfolio.
+
+ // After making a trade, one day passes, and when that happens, the market changes (right now the stock changes by adding a random number from -50 to 50 to its existing price).
+
+// The game ends right now when you run out of money, or when you attempt a trade that you don't have the money to pay for.
+
+
+// TO DO
+
+ // Currently cannot 'Sell' stocks to cash out and end the game in a 'win'. Need to make the 'sell' logic. It will be simple because it's the opposite of 'buy' - you update the properties in your portfolio and add money back into the bank account.
+
+ // There is no logic preventing a negative stock price. If you buy a stock worth negative $5, the balance in your bank account increases because you are subtracting a negative number.
+
+// I'm using the 'prompt' method, which isn't great because you can't scroll while the alert box is on screen. I'd like to switch it to form inputs.
+
+// Currently you have to type the exact name of the stock, I'd also like to make it so you click on boxes (this will prevent people from submitting typos.)
+
+
+
 // Your mission description:
 // Overall mission: Make as much money trading tech stocks in 30 days
 // Goals: Buy stocks, hold onto them, and sell them at a higher price
@@ -35,10 +63,6 @@
 <div id="portfolio">
   <h3>My Portfolio</h3>
 </div>
-
-
-// Run Code Here
-// https://jsfiddle.net/ryanfs/juu5kb0x/
 
 
 // Initial JAVASCRIPT Code
@@ -173,18 +197,5 @@ alert('You lose, you are out of money!');
 
 // Refactored Code
 
+// I'd like to finish the game before refactoring. Unfortunately I ran out of time this week (I spent hours on this challenge, it was fun), but I will continue working on this to finish it up in the following week.
 
-
-// Reflection
-//What was the most difficult part of this challenge?
- // This has been the biggest challenge so far. It involved the most creativity, the most logic, and has been the most fun to make.
-
-//What did you learn about creating objects and functions that interact with one another?
- //  I learned how to add properties to objects and create small functions that just do one thing.
-
-//Did you learn about any new built-in methods you could use in your refactored solution? If so, what were they and how do they work?
-  // Googling and working on stack overflow I put in a few new methods that I hadn't heard of. I also learned how to manipulate the DOM with javascript which has been a really fun experience.
-
-//How can you access and manipulate properties of objects?
-  // You can call the object by its name and add properties to it by setting them equal to the value, you can update the values of those properies as well.
-//
