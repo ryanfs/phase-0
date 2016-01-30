@@ -27,7 +27,7 @@ select region_name, state_name
    order by region_name asc;
 
 # Database Schema
-![My Clueless Database Schema](databse.png)
+![My Clueless Database Schema](database.png)
 
 
  - What are databases for?
