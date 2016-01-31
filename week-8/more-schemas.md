@@ -1,12 +1,12 @@
 # One to One Schema
-!(one to one)[imgs/db_1to1.png]
+![one to one](imgs/db_1to1.png)
 
  - I went with a persons table and a jobs table. Each person has a job, and the job has information like title, company, location, salary, etc.
  - Separating job into its own entity instead of listing it as an attribute of the person makes sense because there would be a large bulk of attributes that would be empty if the person doesn't have a job.
 
  # Many to Many Schema
 
- !(many to many)[imgs/db_manytomany.png]
+ ![many to many](imgs/db_manytomany.png)
 
 # Reflection
 
