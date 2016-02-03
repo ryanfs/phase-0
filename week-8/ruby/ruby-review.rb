@@ -51,3 +51,12 @@ p super_fizzbuzz([1, 3, 5, 15])
 
 
 # Reflection
+
+# What concepts did you review or learn in this challenge?
+## DRY and using the map method. I banged out the initial fizzbuzz really quickly using the most basic, verbose implementation. Then I spend a long time looking at examples and thinking about ways to do as little repetition as possible.
+
+#What is still confusing to you about Ruby?
+## I need to spend more time on classes and doing object oriented programming.
+
+#What are you going to study to get more prepared for Phase 1?
+## Main focus is going to be on javascript I think.
